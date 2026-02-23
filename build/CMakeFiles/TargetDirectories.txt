@@ -1,0 +1,3 @@
+/home/vboxuser/Documents/practicas/practica2/build/CMakeFiles/Practica2.dir
+/home/vboxuser/Documents/practicas/practica2/build/CMakeFiles/edit_cache.dir
+/home/vboxuser/Documents/practicas/practica2/build/CMakeFiles/rebuild_cache.dir
