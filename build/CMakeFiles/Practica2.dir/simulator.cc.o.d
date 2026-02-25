@@ -1,7 +1,7 @@
 CMakeFiles/Practica2.dir/simulator.cc.o: \
- /home/vboxuser/Documents/practicas/practica2/simulator.cc \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/simulator.cc \
  /usr/include/stdc-predef.h \
- /home/vboxuser/Documents/practicas/practica2/simulator.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/simulator.h \
  /usr/include/c++/13/fstream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -154,14 +154,14 @@ CMakeFiles/Practica2.dir/simulator.cc.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/vboxuser/Documents/practicas/practica2/ant.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant.h \
  /usr/include/c++/13/iostream \
- /home/vboxuser/Documents/practicas/practica2/tape.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/tape.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/vboxuser/Documents/practicas/practica2/colours.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/colours.h \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/unique_ptr.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
@@ -173,7 +173,8 @@ CMakeFiles/Practica2.dir/simulator.cc.o: \
  /usr/include/c++/13/limits /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h /usr/include/c++/13/chrono \
  /usr/include/assert.h /usr/include/c++/13/stdlib.h \
- /home/vboxuser/Documents/practicas/practica2/ant_DDII.h \
- /home/vboxuser/Documents/practicas/practica2/ant_DIDI.h \
- /home/vboxuser/Documents/practicas/practica2/ant_IDDI.h \
- /home/vboxuser/Documents/practicas/practica2/ant_IDID.h
+ /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant_DDII.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant_DIDI.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant_IDDI.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant_IDID.h

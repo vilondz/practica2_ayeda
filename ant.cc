@@ -51,16 +51,16 @@ void Ant::move()
   switch (this->orientacion_)
   {
   case orientacion::N:
-    this->pos_y_++;
+    this->pos_x_--;
     break;
   case orientacion::E:
-    this->pos_x_++;
+    this->pos_y_++;
     break;
   case orientacion::S:
-    this->pos_y_--;
+    this->pos_x_++;
     break;
   case orientacion::O:
-    this->pos_x_--;
+    this->pos_y_--;
   }
 }
 void Ant::set_orientacion(orientacion ori)

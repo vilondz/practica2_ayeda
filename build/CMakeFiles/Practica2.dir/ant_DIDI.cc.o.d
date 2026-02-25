@@ -1,8 +1,8 @@
 CMakeFiles/Practica2.dir/ant_DIDI.cc.o: \
- /home/vboxuser/Documents/practicas/practica2/ant_DIDI.cc \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant_DIDI.cc \
  /usr/include/stdc-predef.h \
- /home/vboxuser/Documents/practicas/practica2/ant_DIDI.h \
- /home/vboxuser/Documents/practicas/practica2/ant.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant_DIDI.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -152,4 +152,4 @@ CMakeFiles/Practica2.dir/ant_DIDI.cc.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/vboxuser/Documents/practicas/practica2/colours.h
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/colours.h

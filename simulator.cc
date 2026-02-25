@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <cstdlib>
 #include <stdlib.h>
+#include <sstream>
 #include "ant_DDII.h"
 #include "ant_DIDI.h"
 #include "ant_IDDI.h"
@@ -19,7 +20,9 @@ void Simulator::Simulacion_por_fichero(std::vector<std::unique_ptr<Ant>>& hormig
   //for(auto aux : casillas_negras){
   //  std::cout << aux.first << " " << aux.second << std::endl;
   //}
-
+  for(auto &h : hormigas){
+    std::cout << *h << std::endl;
+  }
   std::cout << "Indique el número de pasos: ";
     int pasos_a_dar, pasos_dados = 0;
     std::cin >> pasos_a_dar;
@@ -54,7 +57,11 @@ void Simulator::Simulacion_por_fichero(std::vector<std::unique_ptr<Ant>>& hormig
 
             // Llamamos al método virtual que aplica el movimiento de la hormiga
             h->movimiento(color_actual);
+            //std::cout << h->get_pos().first << " " << h->get_pos().second << std::endl;
+            h->move();
+            //std::cout << h->get_pos().first << " " << h->get_pos().second << std::endl;
         }
+        //cinta.draw_tape(std::cout);
 
         // Chequeamos que no haya hormigas en la misma celda
         //check_hormigas_no_superpuestas(hormigas);
@@ -178,25 +185,53 @@ void Simulator::menu(){
 //  }
 //  std::cout << std::endl;
 //}
-void Simulator::visualizar(Tape& cinta, const std::vector<std::unique_ptr<Ant>>& hormigas){
-  for(int i = 0; i < cinta.get_dimensions().first; i++){
-    for(int j = 0; j < cinta.get_dimensions().second; j++){
-      bool dibujado = false;
-      for(const auto& h : hormigas){
-        auto [hx, hy] = h->get_pos();
-        if(hx == i && hy == j){
-          dibujado = true;
-          // Flecha de la hormiga con su color, fondo según celda
-            std::cout << h->get_color() <<  cinta.get_color_draw(cinta.get_color(i, j)) << *h << RESET;
-          break;
+
+void Simulator::visualizar(
+    Tape& cinta, 
+    const std::vector<std::unique_ptr<Ant>>& hormigas)
+{
+    // Guardamos dimensiones una sola vez
+    auto dims = cinta.get_dimensions();
+    const int filas = dims.first;
+    const int columnas = dims.second;
+
+    for (int i = 0; i < filas; ++i) {
+        for (int j = 0; j < columnas; ++j) {
+
+            bool dibujado = false;
+
+            for (const auto& h : hormigas) {
+
+                if (!h) continue;  // 👈 Evita desreferenciar nullptr
+
+                auto pos = h->get_pos();
+                int hx = pos.first;
+                int hy = pos.second;
+
+                // Validación extra de seguridad
+                if (hx == i && hy == j) {
+                    std::cout 
+                        << h->get_color()
+                        << cinta.get_color_draw_bg(cinta.get_color(i, j))
+                        << *h
+                        << RESET;
+                    dibujado = true;
+                    break;
+                }
+            }
+
+            if (!dibujado) {
+                std::cout 
+                    << cinta.get_color_draw_bg(cinta.get_color(i, j))
+                    << cinta.get_color_draw(cinta.get_color(i,j))
+                    << "X"
+                    << RESET;
+            }
         }
-      }
-      if(!dibujado)
-          std::cout << "x" << cinta.get_color_draw(cinta.get_color(i,j)) << RESET;
-   }
-   std::cout << std::endl;
-  }
+        std::cout << '\n';
+    }
 }
+
 
 bool Simulator::check_out(Tape& cinta, const std::vector<std::unique_ptr<Ant>>& hormigas) {
     for (const auto& hormiga : hormigas) {
@@ -235,6 +270,7 @@ void Simulator::crear_archivo_guardado(std::string fichero_guardado, Tape& cinta
 }
 void Simulator::check_fichero(std::string fichero){
   std::vector<std::unique_ptr<Ant>> hormigas;
+  std::cout << "Estoy leyendo el fichero" << std::endl;
     std::ifstream input_file(fichero);
     if (!input_file.is_open()) {
         std::cerr << "Error al abrir el fichero terminando programa ..." << std::endl;
@@ -247,13 +283,22 @@ void Simulator::check_fichero(std::string fichero){
 
     // Inicializamos la cinta vacía
     
-    Tape cinta(cinta_x, cinta_y);
+    Tape cinta(cinta_x, cinta_y, n_colores);
 
     // --- Leemos las hormigas ---
-    std::string tipo_hormiga;
-    int hormiga_x, hormiga_y;
-    char orient_char;
-    while (input_file >> tipo_hormiga >> hormiga_x >> hormiga_y >> orient_char) {
+    input_file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::string linea_hormigas;
+    std::getline(input_file, linea_hormigas);
+    std::stringstream ss(linea_hormigas);
+   
+    std::string bloque;
+    hormigas.clear();
+    while (std::getline(ss, bloque, ';')) {
+        std::string tipo_hormiga;
+        int hormiga_x, hormiga_y;
+        char orient_char;
+        std::stringstream datos(bloque);
+        datos >> tipo_hormiga >> hormiga_x >> hormiga_y >> orient_char;
         orientacion dir;
         switch (orient_char) {
             case '^': dir = orientacion::N; break;
@@ -261,7 +306,7 @@ void Simulator::check_fichero(std::string fichero){
             case '>': dir = orientacion::E; break;
             case '<': dir = orientacion::O; break;
             default:
-                std::cerr << "Orientacion invalida en el fichero: " << orient_char << std::endl;
+                std::cerr << "No mas hormigas" << orient_char << std::endl;
                 continue;
         }
 

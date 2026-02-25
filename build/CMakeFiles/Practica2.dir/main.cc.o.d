@@ -1,5 +1,5 @@
 CMakeFiles/Practica2.dir/main.cc.o: \
- /home/vboxuser/Documents/practicas/practica2/main.cc \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/main.cc \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -150,18 +150,18 @@ CMakeFiles/Practica2.dir/main.cc.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/vboxuser/Documents/practicas/practica2/simulator.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/simulator.h \
  /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/vboxuser/Documents/practicas/practica2/ant.h \
- /home/vboxuser/Documents/practicas/practica2/tape.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/ant.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/tape.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/vboxuser/Documents/practicas/practica2/colours.h \
+ /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/colours.h \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/unique_ptr.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \

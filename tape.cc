@@ -18,7 +18,7 @@ Tape::Tape(int size_x, int size_y){
   }
 }
 
-Tape::Tape(int size_x, int size_y, int n_colores, std::vector<celda_con_color> casillas_de_colores){
+Tape::Tape(int size_x, int size_y, int n_colores){
   //para el futuro tiene que coger las fichas negras de un fichero y ponerlas en la cinta donde corresponde
   size_x_ = size_x;
   size_y_ = size_y;
@@ -33,10 +33,6 @@ Tape::Tape(int size_x, int size_y, int n_colores, std::vector<celda_con_color> c
      // std::cout << i  << " " << j << std::endl;
       cinta_[i][j] = 0;
     } 
-  }
-  for(auto aux : casillas_de_colores){
-    //         posicion x       posicion y          color
-    set_color(aux.first.first, aux.first.second, aux.second);
   }
 }
   
@@ -65,7 +61,7 @@ std::pair<int, int> Tape::get_dimensions(){
   return std::pair<int, int>(size_x_, size_y_);
 }
 
-std::string Tape::get_color_draw(int color){
+std::string Tape::get_color_draw_bg(int color){
   switch(color){
     case 0:
       return  BG_BLACK;
@@ -78,6 +74,29 @@ std::string Tape::get_color_draw(int color){
       break;
     case 3:
       return BG_ROSE;
+      break;
+    default:
+      return BG_CYAN;
+      break;
+  }
+} 
+
+std::string Tape::get_color_draw(int color){
+  switch(color){
+    case 0:
+      return  BLACK;
+      break;
+    case 1:
+      return WHITE;
+      break;
+    case 2:
+      return ORANGE;
+      break;
+    case 3:
+      return ROSE;
+      break;
+    default:
+      return CYAN;
       break;
   }
 } 

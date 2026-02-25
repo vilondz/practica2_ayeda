@@ -1,4 +1,4 @@
-# Install script for directory: /home/vboxuser/Documents/practicas/practica2
+# Install script for directory: /home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vboxuser/Documents/practicas/practica2/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/fernando_vbx/Documents/ayeda/practicas/practica2_ayeda/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

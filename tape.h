@@ -13,12 +13,13 @@ class Tape {
     int n_colores_;
   public:
     Tape(int = 10, int = 10);
-    Tape(int , int , int, std::vector<celda_con_color> casillas_de_colores);
+    Tape(int , int , int);
     std::pair<int, int> get_dimensions();
     int get_color(int x, int y);
     int get_n_colores(void){return n_colores_;}
     void change_color(int x, int y);
     void set_color(int x, int y, int color);
     std::string get_color_draw(int color);
+    std::string get_color_draw_bg(int color);
     std::ostream& draw_tape(std::ostream& out);
 };
